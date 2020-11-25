@@ -36,6 +36,7 @@ public class Gun : MonoBehaviour
 
         if (Input.GetButtonUp("Fire2") && holdTime > 1f)
         {
+            impactForce = impactForce * 5f;
             Shoot(damage * 2);
             loopingGunFlash.Stop();
             gunFlash.Play();
@@ -77,7 +78,7 @@ public class Gun : MonoBehaviour
             }
 
             GameObject impact = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
-            Destroy(impact, 2f);
+            Destroy(impact, 1f);
         }
     }
 }

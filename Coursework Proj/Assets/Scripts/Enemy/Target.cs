@@ -5,6 +5,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public float health = 50f;
+    public bool died = false;
 
     public void TakeDamage(float damage)
     {
@@ -12,11 +13,13 @@ public class Target : MonoBehaviour
         if(health <= 0f)
         {
             Die();
+
         }
     }
 
     void Die()
     {
+        died = true;
         Destroy(gameObject);
     }
 }
