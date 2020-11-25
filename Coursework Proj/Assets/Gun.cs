@@ -7,18 +7,19 @@ public class Gun : MonoBehaviour
 
     public float damage = 10f;
     public float range = 100f;
+    public float impactForce = 150f;
     public float holdTime;
 
     public Camera fpsCam;
     public ParticleSystem gunFlash;
     public ParticleSystem loopingGunFlash;
-    //public GameObject impactEffect;
+    public GameObject hitEffect;
 
     // Start is called before the first frame update
     void Start()
     {
-        gunFlash = GameObject.Find("gunFlash").GetComponent<ParticleSystem>();
-        loopingGunFlash = GameObject.Find("loopingGunFlash").GetComponent<ParticleSystem>();
+        //gunFlash = GameObject.Find("gunFlash").GetComponent<ParticleSystem>();
+        //loopingGunFlash = GameObject.Find("loopingGunFlash").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -70,7 +71,13 @@ public class Gun : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
-            //Instantiate(impactEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+            if(hitInfo.rigidbody != null)
+            {
+                hitInfo.rigidbody.AddForce(-hitInfo.normal * impactForce);
+            }
+
+            GameObject impact = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+            Destroy(impact, 2f);
         }
     }
 }
