@@ -15,13 +15,6 @@ public class Gun : MonoBehaviour
     public ParticleSystem loopingGunFlash;
     public GameObject hitEffect;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //gunFlash = GameObject.Find("gunFlash").GetComponent<ParticleSystem>();
-        //loopingGunFlash = GameObject.Find("loopingGunFlash").GetComponent<ParticleSystem>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -66,10 +59,10 @@ public class Gun : MonoBehaviour
         {
             Debug.Log(hitInfo.transform.name);
 
-            Target target = hitInfo.transform.GetComponent<Target>();
-            if (target != null)
+            EnemyController enemy = hitInfo.transform.GetComponent<EnemyController>();
+            if (enemy != null)
             {
-                target.TakeDamage(damage);
+                enemy.TakeDamage(damage);
             }
 
             if(hitInfo.rigidbody != null)

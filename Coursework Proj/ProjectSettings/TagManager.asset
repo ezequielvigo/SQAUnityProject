@@ -9,6 +9,7 @@ TagManager:
   - Text
   - Bar
   - UI
+  - LevelEnd
   layers:
   - Default
   - TransparentFX

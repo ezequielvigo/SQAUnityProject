@@ -6,30 +6,39 @@ using TMPro;
 
 public class EnemiesLeft : MonoBehaviour
 {
-    int enemiesLeft = 0;
+    public int enemiesLeft = 3;
     bool killedAll = false;
-    TextMeshProUGUI instruction;
-    Target[] enemies;
-    Target enemy;
+    public Canvas MainUI;
+    public EnemyController enemy1;
+    public EnemyController enemy2;
+    public EnemyController enemy3;
+    private TextMeshProUGUI text;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy = GameObject.FindObjectOfType<Target>();
-        enemies = GameObject.FindObjectsOfType<Target>();
-        Debug.Log(enemies);
-        instruction = GameObject.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
-        enemiesLeft = 2;
+        text = MainUI.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemiesLeft = enemies.Length;
-        if (enemy.died)
+        if (enemy1.died)
         {
             enemiesLeft--;
-            instruction.text = "Enemies Left: " + enemiesLeft;
+            text.text = "Enemies Left: " + enemiesLeft;
+            enemy1.died = false;
+        } else if(enemy2.died)
+        {
+            enemiesLeft--;
+            text.text = "Enemies Left: " + enemiesLeft;
+            enemy2.died = false;
+        }
+        else if (enemy3.died)
+        {
+            enemiesLeft--;
+            text.text = "Enemies Left: " + enemiesLeft;
+            enemy3.died = false;
         }
     }
 }
