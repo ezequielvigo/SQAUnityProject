@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class Target: MonoBehaviour
 {
     public float health = 50f;
     public bool died = false;

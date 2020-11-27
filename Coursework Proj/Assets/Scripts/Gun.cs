@@ -52,12 +52,11 @@ public class Gun : MonoBehaviour
 
     }
 
-    void Shoot(float damage)
+    public void Shoot(float damage)
     {
         RaycastHit hitInfo;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, range))
         {
-            Debug.Log(hitInfo.transform.name);
 
             EnemyController enemy = hitInfo.transform.GetComponent<EnemyController>();
             if (enemy != null)
