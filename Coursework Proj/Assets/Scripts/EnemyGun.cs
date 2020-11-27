@@ -27,7 +27,7 @@ public class EnemyGun : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(agent.transform.position, agent.transform.forward, out hitInfo, range))
         {
-
+            player.TakeDamage(damage);
             GameObject impact = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
             Destroy(impact, 1f);
         }

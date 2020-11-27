@@ -49,8 +49,7 @@ public class EnemyController : MonoBehaviour
                 FaceTarget();
                 if(inRange == true && canAttack == true)
                 {
-                    gun.Shoot(damage);
-                    playerDamage.TakeDamage(damage);
+                    gun.Shoot(damage);        
                     StartCoroutine(AttackCooldown());
                 }
 
@@ -60,9 +59,7 @@ public class EnemyController : MonoBehaviour
 
     void FaceTarget ()
     {
-        Vector3 direction = (player.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
-        transform.rotation = Quaternion.Slerp(player.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.LookAt(player);
     }
 
     IEnumerator AttackCooldown()
