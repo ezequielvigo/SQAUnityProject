@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
-
+    //Called before the first frame update, thus full health
     void Start()
     {
         currentHealth = maxHealth;
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     {
 
     }
-
+    //updates players current health
     void takeDamage(int damage)
     {
         currentHealth -= damage;

@@ -23,6 +23,7 @@ public class Interactable : MonoBehaviour
         Interact();
     }
 
+    //WHAT IS THIS DOING?
     void Interact()
     {
         RaycastHit interacted;

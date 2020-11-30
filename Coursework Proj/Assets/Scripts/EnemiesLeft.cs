@@ -22,7 +22,7 @@ public class EnemiesLeft : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {//updates remaining enemies each time an enemy is killed
         if (enemy1.died)
         {
             enemiesLeft--;

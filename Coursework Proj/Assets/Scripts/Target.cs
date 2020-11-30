@@ -7,6 +7,7 @@ public class Target : MonoBehaviour
     public float health = 50f;
     public bool died = false;
 
+    //Applies damage to enemy and renders them dead
     public void TakeDamage(float damage)
     {
         health -= damage;
@@ -17,6 +18,7 @@ public class Target : MonoBehaviour
         }
     }
 
+    //once enemy is "dead", they're destroyed
     void Die()
     {
         died = true;

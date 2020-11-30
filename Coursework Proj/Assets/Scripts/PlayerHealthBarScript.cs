@@ -10,13 +10,13 @@ public class PlayerHealthBarScript : MonoBehaviour
     private float maxHealth = 100f;
 
     Player player;
-
+    // Start is called before the first frame update
     private void Start()
     {
         healthBar = GetComponent<Image>();
         player = FindObjectOfType<Player>();
     }
-
+    //Updates every frame
     private void Update()
     {
         currentHealth = player.currentHealth;

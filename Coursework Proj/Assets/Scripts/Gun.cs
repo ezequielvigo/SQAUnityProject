@@ -18,6 +18,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetButton("Fire1") || Input.GetButton("Fire2"))
         {
             if(Input.GetButton("Fire2"))
@@ -26,7 +27,7 @@ public class Gun : MonoBehaviour
             }
             holdTime += Time.deltaTime;
         }
-
+        //Fire 2, charged gun fire (right mouse)
         if (Input.GetButtonUp("Fire2") && holdTime > 1f)
         {
             impactForce = impactForce * 5f;
@@ -36,12 +37,14 @@ public class Gun : MonoBehaviour
             holdTime = 0f;
             Debug.Log("Charged");
 
-        } else if (Input.GetButtonUp("Fire2") && holdTime < 1f)
+        }
+        //IF HELD FOR LESS THAN 1 SEC NO SHOT/DAMAGE?
+        else if (Input.GetButtonUp("Fire2") && holdTime < 1f)
         {
             loopingGunFlash.Stop();
             holdTime = 0f;
         }
-
+        //Fire 1,semi automatic gun shot (left mouse)
         if (Input.GetButtonUp("Fire1") && holdTime < 1.5f)
         {
             gunFlash.Play();
@@ -51,7 +54,7 @@ public class Gun : MonoBehaviour
 
 
     }
-
+    //Applies damage to the enemy
     void Shoot(float damage)
     {
         RaycastHit hitInfo;
