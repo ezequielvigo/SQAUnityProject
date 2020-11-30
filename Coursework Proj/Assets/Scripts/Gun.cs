@@ -15,7 +15,6 @@ public class Gun : MonoBehaviour
     public ParticleSystem loopingGunFlash;
     public GameObject hitEffect;
 
-    // Update is called once per frame
     void Update()
     {
         

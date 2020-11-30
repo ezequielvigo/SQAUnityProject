@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro;
 using System.Collections;
 
 
@@ -7,12 +8,16 @@ public class PlayerController : MonoBehaviour
 
     public float mouseSens = 100f;
     public Transform playerBody;
+    public TextMeshProUGUI isPaused;
 
+    Rect rect;
+    GUIStyle style;
     float xRotation = 0f;
     
     //Called before the first frame update
     void Start()
     {
+        isPaused.enabled = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -31,6 +36,22 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                isPaused.enabled = false;
+            }
+            else
+            {
+                Time.timeScale = 0;
+                isPaused.enabled = true;
+            }
+        }
+
+
     }
+
 
 }

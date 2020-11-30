@@ -10,7 +10,7 @@ public class PlayerHealthBarScript : MonoBehaviour
     private float maxHealth = 100f;
 
     public Player player;
-    //update is called each frame
+
     private void Update()
     {
         currentHealth = player.currentHealth;

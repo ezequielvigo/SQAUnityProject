@@ -13,14 +13,6 @@ public class EnemyGun : MonoBehaviour
     public GameObject hitEffect;
     public Player player;
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-
-    }
-
     public void Shoot(float damage)
     {
         gunFlash.Play();
