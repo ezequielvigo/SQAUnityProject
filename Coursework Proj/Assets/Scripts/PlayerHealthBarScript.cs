@@ -5,18 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealthBarScript : MonoBehaviour
 {
-    private Image healthBar;
+    public Image healthBar;
     public float currentHealth;
     private float maxHealth = 100f;
 
-    Player player;
-    // Start is called before the first frame update
-    private void Start()
-    {
-        healthBar = GetComponent<Image>();
-        player = FindObjectOfType<Player>();
-    }
-    //Updates every frame
+    public Player player;
+    //update is called each frame
     private void Update()
     {
         currentHealth = player.currentHealth;

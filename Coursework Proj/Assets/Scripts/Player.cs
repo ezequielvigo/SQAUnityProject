@@ -18,7 +18,8 @@ public class Player : MonoBehaviour
 
     }
     //updates players current health
-    void takeDamage(int damage)
+    public void TakeDamage(float damage)
+
     {
         currentHealth -= damage;
     }

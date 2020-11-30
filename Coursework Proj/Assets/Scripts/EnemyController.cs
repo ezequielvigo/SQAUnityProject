@@ -12,15 +12,24 @@ public class EnemyController : MonoBehaviour
     public float amountToFill = 1f;
     public float amountToSubtract;
 
+    public float enemyCooldown = 1f;
+    public float damage = 7.5f;
+    private bool inRange = false;
+    private bool canAttack = true;
+
+    public EnemyGun gun;
+
+
     public Transform player;
     public NavMeshAgent agent;
+    public Player playerDamage;
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("First-Person Player").transform;
-        agent = GetComponent<NavMeshAgent>();
+
         
     }
 
@@ -31,8 +40,33 @@ public class EnemyController : MonoBehaviour
 
         if(distance <= lookRadius)
         {
+          
             agent.SetDestination(player.position);
+
+            if(distance <= agent.stoppingDistance)
+            {
+                inRange = true;
+                FaceTarget();
+                if(inRange == true && canAttack == true)
+                {
+                    gun.Shoot(damage);        
+                    StartCoroutine(AttackCooldown());
+                }
+
+            }
         }
+    }
+
+    void FaceTarget ()
+    {
+        transform.LookAt(player);
+    }
+
+    IEnumerator AttackCooldown()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(enemyCooldown);
+        canAttack = true;
     }
 
     public void TakeDamage(float damage)
