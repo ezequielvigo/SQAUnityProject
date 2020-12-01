@@ -8,15 +8,12 @@ public class Player : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
-    public int scene1;
-    public int scene2;
 
 
     //Called before the first frame update, thus full health
     void Start()
     {
         currentHealth = maxHealth;
-        Debug.Log(SceneManager.GetActiveScene().ToString() + " ge");
     }
 
 

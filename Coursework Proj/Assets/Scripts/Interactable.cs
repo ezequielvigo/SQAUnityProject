@@ -12,6 +12,7 @@ public class Interactable : MonoBehaviour
     public EnemiesLeft enemiesLeft;
     public TextMeshProUGUI textShow;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -31,7 +32,7 @@ public class Interactable : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && enemiesLeft.enemiesLeft == 0)
                 {
                     SceneManager.LoadScene(1);
-                }
+                } 
             }
 
    
