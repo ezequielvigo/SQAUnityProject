@@ -55,6 +55,7 @@ public class Gun : MonoBehaviour
     }
 
     //Applies damage to the enemy
+    //IS IT INTENTIONAL THAT THE SHOT HAS TO BE DEAD CENTER ON THE ENEMY? DOESN'T TAKE DAMAGE IF NOT, CANT SEE WHERE THIS IS THOUGH. I IMAGINE ITS PART OF THE "hitinfo" 
     public void Shoot(float damage)
     {
         RaycastHit hitInfo;

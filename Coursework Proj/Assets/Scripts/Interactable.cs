@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviour
         Interact();
     }
 
-    //WHAT IS THIS DOING?
+    //WHAT IS THIS DOING? DOES IT LOAD THE NEW LEVEL?
     void Interact()
     {
         textShow.enabled = false;

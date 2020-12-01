@@ -20,7 +20,7 @@ public class InteractableLevel1 : MonoBehaviour
         Interact();
     }
 
-    //WHAT IS THIS DOING?
+    //WHAT IS THIS DOING? END OF THE GAME?
     void Interact()
     {
         textShow.enabled = false;

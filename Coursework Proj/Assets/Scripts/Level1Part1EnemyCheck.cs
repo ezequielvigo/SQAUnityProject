@@ -13,13 +13,15 @@ public class Level1Part1EnemyCheck : MonoBehaviour
     public GameObject gateClosed;
     public GameObject gateOpened;
 
+    //upon start, gate to next level is locked.
     void Start()
     {
         gateOpened.SetActive(false);
     }
 
     void Update()
-    {//updates remaining enemies each time an enemy is killed
+    {
+        //checks enemies are dead before moving onto next level
         if (enemy1.died && enemy2.died && enemy3.died)
         {
             gateClosed.SetActive(false);

@@ -47,13 +47,17 @@ public class EnemiesLeftLevel1 : MonoBehaviour
     }
 
     void Update()
-    {//updates remaining enemies each time an enemy is killed
+    {
+        //updates remaining enemies each time an enemy is killed
+
+        //18 ELSE IFS NESTED IN THIS 1 IF STATEMENT. CAN WE MAKE THIS MORE CONCISE? 
         if (enemy1.died)
         {
             enemiesLeft--;
             text.text = "Enemies Left: " + enemiesLeft;
             enemy1.died = false;
         }
+
         else if (enemy2.died)
         {
             enemiesLeft--;
@@ -144,6 +148,8 @@ public class EnemiesLeftLevel1 : MonoBehaviour
             text.text = "Enemies Left: " + enemiesLeft;
             enemy16.died = false;
         }
+        //MAYBE THIS NEXT BIT BECOMSE A NEW IF STATEMENT RATHER THAN BEING NESTED IN THE ABOVE (I TRIED IT AND IT WORKS FINE.)
+        //opens gates when enemies are killed    
         else if (enemiesLeft == 14)
         {
             gateClosed1.SetActive(false);

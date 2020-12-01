@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     }
 
 
-    //updates players current health
+    //updates players current health when shot
     public void TakeDamage(float damage)
 
     {

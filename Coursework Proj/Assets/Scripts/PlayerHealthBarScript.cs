@@ -13,6 +13,7 @@ public class PlayerHealthBarScript : MonoBehaviour
 
     private void Update()
     {
+        //gets player health and displays it in healthbar
         currentHealth = player.currentHealth;
         healthBar.fillAmount = currentHealth / maxHealth;
     }
