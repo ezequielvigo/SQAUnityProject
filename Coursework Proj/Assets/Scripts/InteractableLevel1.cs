@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class InteractableLevel1 : MonoBehaviour
 {
-    public float range = 5f;
+    public float range = 10f;
 
     public Camera fpsCam;
     public EnemiesLeftLevel1 enemiesLeft;
@@ -20,7 +20,11 @@ public class InteractableLevel1 : MonoBehaviour
         Interact();
     }
 
-    //WHAT IS THIS DOING? END OF THE GAME?
+    //Michael - WHAT IS THIS DOING? END OF THE GAME?
+    //Josh    - Yes, its an extension of the interactable code for the tutorial level
+    //        - When the user interacts with it, it displays a text box above the interactable object
+    //          telling the player they have finished the game.
+    //        - If they interact with it more than once, the game restarts.
     void Interact()
     {
         textShow.enabled = false;

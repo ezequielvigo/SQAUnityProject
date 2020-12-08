@@ -37,7 +37,8 @@ public class Gun : MonoBehaviour
             Debug.Log("Charged");
 
         }
-        //IF HELD FOR LESS THAN 1 SEC NO SHOT/DAMAGE?
+        //Michael - IF HELD FOR LESS THAN 1 SEC NO SHOT/DAMAGE?
+        //Josh    - Yes, no shot or damage
         else if (Input.GetButtonUp("Fire2") && holdTime < 1f)
         {
             loopingGunFlash.Stop();
@@ -55,7 +56,20 @@ public class Gun : MonoBehaviour
     }
 
     //Applies damage to the enemy
-    //IS IT INTENTIONAL THAT THE SHOT HAS TO BE DEAD CENTER ON THE ENEMY? DOESN'T TAKE DAMAGE IF NOT, CANT SEE WHERE THIS IS THOUGH. I IMAGINE ITS PART OF THE "hitinfo" 
+    //Michael - IS IT INTENTIONAL THAT THE SHOT HAS TO BE DEAD CENTER ON THE ENEMY? DOESN'T TAKE DAMAGE IF NOT, 
+    //          CANT SEE WHERE THIS IS THOUGH. I IMAGINE ITS PART OF THE "hitinfo" 
+    //Josh    - It does not need to be dead center on the enemy:
+    //          The Raycast determines what the player is looking at, so if they are aiming at the enemy's collider object
+    //          and shoot, the enemy will take damage
+    //        - I will admit that the collider isn't perfect, the lack of graphics for the enmy does make 
+    //          it more confusing for the player to know if they have hit the enemy for sure
+    //        - The Raycast determines what the player is looking at, so if they are aiming at the enemy and shoot
+    //          the enemy will take damage
+
+
+    //UPDATE
+    //Josh    - In response to your complaint I definitely noticed how bad the collider for the enemy was wrt. hitting the enemy
+    //        - Significantly changed the collider for the enemy, it is now much easier to hit the enemy reliably
     public void Shoot(float damage)
     {
         RaycastHit hitInfo;

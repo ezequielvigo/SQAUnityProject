@@ -19,7 +19,9 @@ public class Interactable : MonoBehaviour
         Interact();
     }
 
-    //WHAT IS THIS DOING? DOES IT LOAD THE NEW LEVEL?
+    //Michael - WHAT IS THIS DOING? DOES IT LOAD THE NEW LEVEL?
+    //Josh - Yes, when you interact using the E button on the object at the end of the level
+    //       it loads the next level. Only when all enemies have been killed though
     void Interact()
     {
         textShow.enabled = false;

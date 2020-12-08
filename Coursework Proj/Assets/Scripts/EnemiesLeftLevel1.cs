@@ -50,7 +50,10 @@ public class EnemiesLeftLevel1 : MonoBehaviour
     {
         //updates remaining enemies each time an enemy is killed
 
-        //18 ELSE IFS NESTED IN THIS 1 IF STATEMENT. CAN WE MAKE THIS MORE CONCISE? 
+        //Michael - 18 ELSE IFS NESTED IN THIS 1 IF STATEMENT. CAN WE MAKE THIS MORE CONCISE? 
+        //Josh    - I had to resort to this as I couldn't figure out any other way to do it
+        //          it certainly isn't efficient or good code, but it works. And we can talk about this
+        //          in the report.
         if (enemy1.died)
         {
             enemiesLeft--;

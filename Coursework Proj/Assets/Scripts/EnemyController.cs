@@ -71,7 +71,10 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        amountToSubtract = (damage / health);//If hp is 50 and dmg is 10, amountToSubtract is .2 = 20% dmg (DOES THIS MEAN DAMAGE RECIEVED IS DEPENDANT ON CURRENT HEALTH?)
+        //If hp is 50 and dmg is 10, amountToSubtract is .2 = 20% dmg 
+        //Michael - (DOES THIS MEAN DAMAGE RECIEVED IS DEPENDANT ON CURRENT HEALTH?)
+        //Josh    - Yes it does, but it doesn't work perfectly
+        amountToSubtract = (damage / health);
         amountToFill -= amountToSubtract;
         health -= damage;
 
