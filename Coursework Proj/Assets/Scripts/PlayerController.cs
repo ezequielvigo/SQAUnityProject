@@ -19,11 +19,13 @@ public class PlayerController : MonoBehaviour
     {
         isPaused.enabled = false;
         Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     //Updates once per frame
     void Update()
     {
+
         //Gets the curser input from the mouse
         float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
